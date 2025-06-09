@@ -1,6 +1,6 @@
 # Gemini RAG-like Chatbot with Google Drive & Apps Script
 
-This project demonstrates how to build a powerful, serverless, RAG-like (Retrieval-Augmented Generation) chatbot using a combination of Google Apps Script, Google Drive, and the incredible power of Google's Gemini 1.5 models.
+This project demonstrates how to build a powerful, serverless, RAG-like (Retrieval-Augmented Generation) chatbot using a combination of Google Apps Script, Google Drive, and the incredible power of Google's Gemini 2.0 models.
 
 Instead of setting up complex vector databases and embedding pipelines, this solution leverages the massive **1 million token context window** of Gemini 2.0. It works by retrieving the full text content from your specified files in Google Drive and "stuffing" it directly into the prompt as context for the model. This makes it a simple yet highly effective way to chat with your documents.
 
@@ -21,7 +21,7 @@ The workflow is straightforward and powerful:
 2.  **File Retrieval:** The Google Apps Script backend identifies a designated folder in your Google Drive.
 3.  **Text Extraction:** The script iterates through all supported files (Google Docs, Sheets, `.txt`) in the folder. It extracts the raw text content from each one. For Google Sheets, it converts the data into CSV format.
 4.  **Context Stuffing:** All the extracted text is concatenated into a single, large block of context. This context is prepended to the user's original question.
-5.  **Gemini API Call:** This combined prompt (context + user question) is sent to the Gemini 1.5 API.
+5.  **Gemini API Call:** This combined prompt (context + user question) is sent to the Gemini 2.0 API.
 6.  **In-Context Response:** Gemini uses the provided text to generate a relevant, context-aware answer.
 7.  **Display:** The answer is returned to the user in the web app.
 
